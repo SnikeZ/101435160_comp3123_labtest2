@@ -18,3 +18,13 @@ API Docs: https://randomuser.me/documentation
 ```
    npm run start
 ```
+
+## Screenshots
+
+### Web Application
+![Web Application Interface](doc_img/web.png)
+
+### API Testing (Postman)
+![Postman API Testing](doc_img/postman.png)
+
+
