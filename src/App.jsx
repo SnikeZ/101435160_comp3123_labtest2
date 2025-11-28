@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import Person from './components/person';
+
+const MIN_PERSON = 1
+const MAX_PERSON = 100
 
 function App() {
 
   const [gender, setGender] = useState('any');
-  const [count, setCount] = useState(5);
+  const [count, setCount] = useState(20);
   const [nationality, setNationality] = useState('any');
 
   const [loading, setLoading] = useState(false)
@@ -14,7 +17,7 @@ function App() {
 
   const handleCountChange = (e) => {
     const value = parseInt(e.target.value);
-    if (value >= 1 && value <= 10) {
+    if (value >= MIN_PERSON && value <= MAX_PERSON) {
       setCount(value);
     }
   };
@@ -32,6 +35,10 @@ function App() {
       setLoading(false)
     }
   }
+
+  useEffect(() => {
+    handleSearch();
+  }, [gender, count, nationality]);
 
   return (
     <div className="App">
@@ -62,8 +69,8 @@ function App() {
             </label>
             <input
               type="number"
-              min="1"
-              max="10"
+              min={MIN_PERSON}
+              max={MAX_PERSON}
               value={count}
               onChange={handleCountChange}
               style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
@@ -86,19 +93,6 @@ function App() {
               <option value="gb">Great Britain</option>
             </select>
           </div>
-
-          <button
-            onClick={handleSearch}
-            style={{
-              width: '150px',
-              padding: '8px 16px',
-              cursor: 'pointer',
-              border: 'none',
-              borderRadius: '4px'
-            }}
-          >
-            Search
-          </button>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
           {
