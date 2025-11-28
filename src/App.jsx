@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Person from './components/person';
 
@@ -45,7 +45,9 @@ function App() {
       <header className="App-header">
       </header>
       <div style={{ padding: '20px' }}>
-        <h2>People generator</h2>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}} >
+          <h2>Mock people generator</h2>
+        </div>
 
         <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
           <div style={{ width: '200px' }}>
