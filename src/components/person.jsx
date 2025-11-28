@@ -8,7 +8,7 @@ export default function Person({ person }) {
                 alt="User"
                 style={{ width: '100%' }}
             />
-            <div className = 'name' style={{
+            <div className='name' style={{
                 fontSize: '18px',
                 fontWeight: '600',
                 textAlign: 'center'
@@ -16,7 +16,8 @@ export default function Person({ person }) {
                 {person.name.first} {person.name.last}
             </div>
             <p>{person.email}</p>
-            <p>{person.location.city} {person.nat}</p>
+            <p>Locatin: {person.location.city}, {person.location.country}</p>
+            <p>Nationality:  {person.nat}</p>
         </div>
     )
 }
