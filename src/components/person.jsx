@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Person({ person }) {
     return (
-        <div style={{ border: '1px solid #ccc', padding: '5px', margin: '10px', width: '250px', width: '80%', backgroundColor: 'white' }}>
+        <div style={{ border: '1px solid #ccc', padding: '5px', margin: '10px', width: '250px', width: '80%', backgroundColor: 'white', borderRadius: '8px', }}>
             <img
                 src={person.picture.large}
                 alt="User"
